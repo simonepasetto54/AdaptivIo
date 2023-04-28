@@ -8,12 +8,22 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.4.0",
+    "@fortawesome/free-regular-svg-icons": "^6.4.0",
+    "@fortawesome/free-solid-svg-icons": "^6.4.0",
+    "@fortawesome/vue-fontawesome": "^3.0.3",
+    "bootstrap": "^5.2.3",
+    "bootstrap-icons": "^1.10.5",
+    "file-saver": "^2.0.5",
+    "html2canvas": "^1.4.1",
     "pinia": "^2.0.32",
+    "postcss-extend": "^1.0.5",
     "vue": "^3.2.47",
     "vue-router": "^4.1.6"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
+    "sass": "^1.62.1",
     "vite": "^4.1.4"
   }
 }
