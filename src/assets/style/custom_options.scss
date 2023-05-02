@@ -4,7 +4,7 @@
    width: 500px;
    height: 500px;
    position: fixed;
-   z-index: 1000;
+   z-index: 1;
    right: -190px;
    bottom: -190px;
    transition: visibility 0.3s cubic-bezier(0.42, 0, 0.58, 1) 0s;
@@ -17,7 +17,7 @@
     width: 112px;
     height: 112px;
     border-radius: 50%;
-    z-index: 100001;
+    z-index: 2;
 
     .options-button{
         display: flex;
@@ -49,7 +49,7 @@
    position: absolute;
    width: 100%;
    height: 100%;
-   z-index: 100000;
+   z-index: 3;
    -webkit-transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1),opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1),-webkit-transform 0.3s cubic-bezier(0.42, 0, 0.58, 1);
    -moz-transition: transform 0.3s cubic-bezier(0.42, 0, 0.58, 1),opacity 0.3s cubic-bezier(0.42, 0, 0.58, 1);
    -webkit-transform: scale(0);

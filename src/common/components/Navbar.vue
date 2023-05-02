@@ -1,9 +1,10 @@
 <template>
-    <nav class="navbar" style="height: 50px;" :style="{ backgroundColor: primaryColor }">
+    <nav class="navbar" id="customNav" :style="{ backgroundColor: primaryColor }">
         <div class="container d-flex justify-content-between">
             <a class="navbar-brand" href="#">
                 <p style="margin: 0; font-size: 14px; color:white">Powered By Idea Shopping ®</p>
             </a>
+
             <!-- <font-awesome-icon icon="fa-regular fa-heart" :size="'xl'" /> -->
             <div class="icons-navbar" style="color:white">
                 <i class="bi bi-heart"></i>
@@ -11,6 +12,7 @@
             </div>
         </div>
     </nav>
+
     <div class="logo-navbar d-flex align-items-center" style="height: 120px;">
         <div class="container">
             <div class="row">
@@ -46,6 +48,9 @@
 </template>
 
 <script setup>
+
+
+
 let primaryColor = "#0f1941"
 </script>
 
@@ -65,5 +70,9 @@ b {
     color: #000000;
     font-size:13px;
 
+}
+
+.navbar-style{
+    height: 50px;
 }
 </style>

@@ -1,2 +1,3 @@
 @import './base.css';
-@import './custom_options.scss'
+@import './custom_options.scss';
+@import './_swal.scss'

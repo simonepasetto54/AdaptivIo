@@ -1,52 +1,80 @@
 <template>
-    <div class="options-wrapper" :style="{visibility: updateVisibility}" >
-        <div class="custom_position">
-            <div class="options-button" @mouseover="openOptions('visible')">
-                <i class="bi bi-gear" style="color:white"></i>
-            </div>
-             
-        </div>
-        <div class="section-option-wrapper" @mouseleave="openOptions('hidden')">
-            <div class="graphic-options flex-center">
-                <i class="bi bi-pencil-fill" style="color:#1b2032"></i>
-             </div>
-              <div class="screenshot-options flex-center">
-                <i class="bi bi-camera-fill" style="color:#1b2032" type="button" data-bs-toggle="modal" data-bs-target="#exampleModal" @click="previewSite('to_save')"></i>
-             </div>
-        </div>
+  <div class="options-wrapper" :style="{ visibility: updateVisibility }">
+    <div class="custom_position">
+      <div class="options-button" @mouseover="openOptions('visible')">
+        <i class="bi bi-gear" style="color: white"></i>
+      </div>
     </div>
-
+    <div class="section-option-wrapper" @mouseleave="openOptions('hidden')">
+      <div class="graphic-options flex-center" @click="addOverlay()">
+        <i class="bi bi-pencil-fill" style="color: #1b2032"></i>
+      </div>
+      <div
+        class="screenshot-options flex-center"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        @click="previewSite('to_save')"
+      >
+        <i class="bi bi-camera-fill" style="color: #1b2032"></i>
+      </div>
+    </div>
+  </div>
 </template>
 
 <script setup>
-import { ref } from 'vue'
-import {previewSite} from '../logic/Screenshot'
+import { ref } from "vue";
+import { previewSite } from "../logic/Screenshot";
+import { Toast } from "../mixins/swal";
+import Swal from "sweetalert2";
+let updateVisibility = ref("hidden");
+const openOptions = (option) => {
+  updateVisibility.value = option;
+  const optionWrapper = document.getElementsByClassName(
+    "section-option-wrapper"
+  );
+  optionWrapper[0].classList.toggle(
+    "section-option-wrapper-open",
+    option === "visible"
+  );
+};
 
-let updateVisibility = ref("hidden")
-const openOptions = (option) =>{
-    updateVisibility.value = option;
-    const optionWrapper = document.getElementsByClassName("section-option-wrapper");
-    optionWrapper[0].classList.toggle('section-option-wrapper-open', option === 'visible')
-}
+const addOverlay = () => { // da mettere in un file di logic da importare nell'app quando serve?
+  const elementOverlayed = document.getElementById("overlay");
+  elementOverlayed.classList.add("overlay");
+  const customNav = document.getElementById("customNav");
+  customNav.classList.add("z11", "editable");
+const overlayElement = document.getElementById("close-overlay")
+  overlayElement.classList.remove("d-none")
+  Swal.fire({
+    position: "top-start",
+    showConfirmButton: false,
+    width: 200,
+    backdrop: false,
+    html: `<p>Seleziona il colore primario</p><input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
+`,
+    customClass: {
+      popup: "navbar-toast",
+    },
+  });
+};
 </script>
 
 <style lang="scss" scoped>
-.graphic-options{
-    width: 56px;
-    height: 56px;
-    background-color: white;
-    position: absolute;
-    left: 10%;
-    top: 40%;
-    cursor: pointer;
-    border-radius: 50%;
+.graphic-options {
+  width: 56px;
+  height: 56px;
+  background-color: white;
+  position: absolute;
+  left: 10%;
+  top: 40%;
+  cursor: pointer;
+  border-radius: 50%;
 }
 
-.screenshot-options {   
-    @extend  .graphic-options;
-    left: 17%;
-    top: 22%;
+.screenshot-options {
+  @extend .graphic-options;
+  left: 17%;
+  top: 22%;
 }
-
-
 </style>
