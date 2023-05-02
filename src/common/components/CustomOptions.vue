@@ -6,7 +6,7 @@
       </div>
     </div>
     <div class="section-option-wrapper" @mouseleave="openOptions('hidden')">
-      <div class="graphic-options flex-center" @click="addOverlay()">
+      <div class="graphic-options flex-center" @click="openOverlay()">
         <i class="bi bi-pencil-fill" style="color: #1b2032"></i>
       </div>
       <div
@@ -25,8 +25,8 @@
 <script setup>
 import { ref } from "vue";
 import { previewSite } from "../logic/Screenshot";
-import { Toast } from "../mixins/swal";
-import Swal from "sweetalert2";
+import {openOverlay} from '../logic/Overlay';
+
 let updateVisibility = ref("hidden");
 const openOptions = (option) => {
   updateVisibility.value = option;
@@ -39,25 +39,6 @@ const openOptions = (option) => {
   );
 };
 
-const addOverlay = () => { // da mettere in un file di logic da importare nell'app quando serve?
-  const elementOverlayed = document.getElementById("overlay");
-  elementOverlayed.classList.add("overlay");
-  const customNav = document.getElementById("customNav");
-  customNav.classList.add("z11", "editable");
-const overlayElement = document.getElementById("close-overlay")
-  overlayElement.classList.remove("d-none")
-  Swal.fire({
-    position: "top-start",
-    showConfirmButton: false,
-    width: 200,
-    backdrop: false,
-    html: `<p>Seleziona il colore primario</p><input type="color" class="form-control form-control-color" id="exampleColorInput" value="#563d7c" title="Choose your color">
-`,
-    customClass: {
-      popup: "navbar-toast",
-    },
-  });
-};
 </script>
 
 <style lang="scss" scoped>

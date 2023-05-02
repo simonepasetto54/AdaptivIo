@@ -16,12 +16,12 @@
     <div class="logo-navbar d-flex align-items-center" style="height: 120px;">
         <div class="container">
             <div class="row">
-                <div class="col-md-4 align-items-center">
+                <div class="col-md-3 align-items-center">
                     <a class="navbar-brand" href="#">
-                        <img src="../../assets/imgs/logo.png" class="w-50" alt="">
+                        <img src="../../assets/imgs/logo.png" class="w-75" alt="">
                     </a>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="wrapper-action-navbar d-flex justify-content-end align-items-center h-100">
                         <div class="d-flex">
                             <div class="mx-5">
@@ -40,9 +40,6 @@
                     </div>
                 </div>
             </div>
-
-
-
         </div>
     </div>
 </template>
