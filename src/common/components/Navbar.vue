@@ -12,7 +12,8 @@
             </div>
         </div>
     </nav>
-
+<ModalOverlayVue :widthOv="'150px'" :heightOv="'auto'" :topOv="'60px'" :leftOv="'10px'" :titleContent="titleContent" :modalContent="modalContent">
+</ModalOverlayVue>
     <div class="logo-navbar d-flex align-items-center" style="height: 120px;">
         <div class="container">
             <div class="row">
@@ -45,9 +46,10 @@
 </template>
 
 <script setup>
+import ModalOverlayVue from "./ModalOverlay.vue"
 
-
-
+let modalContent = "<div id='colorPicker'></div>"
+let titleContent = "<p>Scegli il colore primario</p>"
 let primaryColor = "#0f1941"
 </script>
 
