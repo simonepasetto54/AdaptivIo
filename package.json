@@ -19,7 +19,6 @@
     "html2canvas": "^1.4.1",
     "pinia": "^2.0.32",
     "postcss-extend": "^1.0.5",
-    "sweetalert2": "^11.7.3",
     "vue": "^3.2.47",
     "vue-color-input": "^1.0.8",
     "vue-router": "^4.1.6"
