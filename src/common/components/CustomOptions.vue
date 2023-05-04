@@ -30,13 +30,8 @@ import {openOverlay} from '../logic/Overlay';
 let updateVisibility = ref("hidden");
 const openOptions = (option) => {
   updateVisibility.value = option;
-  const optionWrapper = document.getElementsByClassName(
-    "section-option-wrapper"
-  );
-  optionWrapper[0].classList.toggle(
-    "section-option-wrapper-open",
-    option === "visible"
-  );
+  const optionWrapper = document.getElementsByClassName("section-option-wrapper");
+  optionWrapper[0].classList.toggle("section-option-wrapper-open", option === "visible");
 };
 
 </script>

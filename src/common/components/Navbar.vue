@@ -17,11 +17,20 @@
     :heightOv="'auto'"
     :topOv="'60px'"
     :leftOv="'10px'"
-    :titleContent="titleContent"
-    :modalContent="modalContent"
+    :titleContent="'<p>Scegli il colore primario</p>'"
+    :modalContent="'<div id=&quot;colorPickerPrimary&quot;></div>'"
   >
   </ModalOverlayVue>
-  <div class="logo-navbar d-flex align-items-center" style="height: 120px">
+  <!-- <ModalOverlayVue
+    :widthOv="'150px'"
+    :heightOv="'auto'"
+    :topOv="'160px'"
+    :leftOv="'100px'"
+    :titleContent="'<p>Scegli il colore secondario</p>'"
+    :modalContent="'<div id=&quot;colorPickerSecondary&quot;></div>'"
+  >
+  </ModalOverlayVue> -->
+  <div class="logo-navbar d-flex align-items-center" style="height: 100px">
     <div class="container">
       <div class="row">
         <div class="col-md-3 align-items-center">
@@ -45,7 +54,7 @@
             </div>
             <div
               class="shopping-button d-flex align-items-center justify-content-center"
-              :style="{ backgroundColor: primaryColor }"
+              :style="{ backgroundColor: store.primaryColor }"
               style="color: white"
             >
               <i class="bi bi-bag-plus me-3"></i>
@@ -63,24 +72,7 @@ import ModalOverlayVue from "./ModalOverlay.vue";
 import { useCustomizationStore } from "../platform/IdeaShopping/store/customization";
 
 const store = useCustomizationStore();
-// store.$subscribe(callback, { detached: true })
 
-store.$subscribe((mutation, state) => {
-  // import { MutationType } from 'pinia'
-  mutation.type // 'direct' | 'patch object' | 'patch function'
-  console.log(mutation.type)
-  // same as cartStore.$id
-  mutation.storeId // store che viene aggiornato
-  console.log(mutation.storeId)
-
-  // only available with mutation.type === 'patch object'
-  mutation.payload // patch object passed to cartStore.$patch()
-  console.log(mutation.payload)
-
-  // persist the whole state to the local storage whenever it changes
-
-  localStorage.setItem('cart', JSON.stringify(state))
-})
 let modalContent = "<div id='colorPicker'></div>";
 let titleContent = "<p>Scegli il colore primario</p>";
 </script>
@@ -104,5 +96,9 @@ b {
 
 .navbar-style {
   height: 50px;
+}
+
+.logo-navbar{
+  box-shadow: 0px 2px 9px 0px rgba(150,150,150,0.7)
 }
 </style>
