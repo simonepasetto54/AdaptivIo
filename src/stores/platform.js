@@ -1,11 +1,11 @@
-import { ref } from 'vue'
-import { defineStore } from 'pinia'
+import { ref } from 'vue';
+import { defineStore } from 'pinia';
 
 export const usePlatformStore = defineStore('platform', () => {
-  const platform = ref('')
+  const platform = ref('');
   const setPlatform = (choosedPlatform) => {
-    platform.value = choosedPlatform
+    platform.value = choosedPlatform;
   }
 
-  return { platform, setPlatform }
+  return { platform, setPlatform };
 })

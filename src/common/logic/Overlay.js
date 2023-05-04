@@ -1,4 +1,4 @@
-import { cPicker } from "../mixins/pickr"
+import {cPicker} from "../mixins/pickr";
 
 export const openOverlay = () => {
     const elementOverlayed = document.getElementById("overlay");

@@ -2,13 +2,17 @@ import Pickr from '@simonwep/pickr/dist/pickr.es5.min';
 import '@simonwep/pickr/dist/themes/classic.min.css';   // 'classic' theme
 import '@simonwep/pickr/dist/themes/monolith.min.css';  // 'monolith' theme
 import '@simonwep/pickr/dist/themes/nano.min.css'; 
+import { useCustomizationStore } from "../platform/IdeaShopping/store/customization";
 
-const cPicker = (element) => {
 
-  Pickr.create({
+export const cPicker = (element) => {
+  let store = useCustomizationStore();
+
+ const pickr= Pickr.create({
     el: element,
     theme: "nano",
     default: "#563d7c",
+    defaultRepresentation: 'HEX',
     components: {
       preview: true,
       hue: true,
@@ -19,8 +23,16 @@ const cPicker = (element) => {
         save: true,
       },
     },
+
+    
   });
+
+  pickr.on('changestop', () => {
+    let selectedColor = pickr.getColor()
+    let rgba = selectedColor.toHEXA().toString(3);
+    store.setPrimaryColor(rgba)
+})
+
+
 }
 
-
-export{cPicker}
