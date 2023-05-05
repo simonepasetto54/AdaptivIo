@@ -1,5 +1,5 @@
 <template>
-    <div :class="fFam" style="backgroundColor:#f6f6f6;">
+    <div :class="fFam" style="backgroundColor:#f6f6f6" id="to_screen">
       <div class="row">
         <div class="col-md-1"></div>
         <div class="col-md-10">
@@ -10,10 +10,14 @@
         <div class="col-md-1"></div>
       </div>
     </div>  
+  <CustomOptions></CustomOptions>
+
 </template>
 
 <script setup>
 import Navbar from "./Navbar.vue";
+import CustomOptions from "../../../components/CustomOptions.vue";
+
   const props = defineProps(["fFam"]);
 </script>
 

@@ -1,5 +1,5 @@
 <template>
-<div :class="fFam">
+<div :class="fFam" id="to_screen">
     <header>
       <Navbar></Navbar>
     </header>
@@ -14,11 +14,15 @@
     </div>
     
 </div>
+<CustomOptions></CustomOptions>
+
 </template>
 
 <script setup>
 import Navbar from "./Navbar.vue";
 import WelcomeText from "./WelcomeText.vue";
+import CustomOptions from "../../../components/CustomOptions.vue";
+
  const props = defineProps(["fFam"]);
 
 </script>

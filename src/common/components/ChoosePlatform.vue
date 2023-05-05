@@ -1,7 +1,7 @@
 <template>
     <div class="container">
-        <div class="row flex-center h100vh ">
-            <div class="col-md-4 platform-box flex-center" @click="selectPlatform('ideaShopping')">
+        <div class="row flex-center h100vh">
+            <div class="col-md-4 platform-box flex-center" @click="selectPlatform('ideashopping')">
                 <img src="https://www.idea-shopping.com/assets/ideashopping30/images/png/logo/logo.png" alt="">
             </div>
             <div class="col-md-4 platform-box flex-center mx-5" @click="selectPlatform('jobandjoy')">
@@ -15,31 +15,34 @@
 </template>
 
 <script setup>
-import {usePlatformStore} from '../../stores/platform'
-const store = usePlatformStore();
+import { usePlatformStore } from '../../stores/platform';
+import { useRouter, } from 'vue-router';
+const router = useRouter();
 
-const selectPlatform = (plat) =>{
-  store.setPlatform(plat)
+const store = usePlatformStore();
+const selectPlatform = (plat) => {
+    store.setPlatform(plat)
+    router.push({path: `/${plat}`})
 }
 </script>
 
 <style lang="scss" scoped>
-.platform-box{
+.platform-box {
     width: 150px;
     height: 150px;
     background-color: white;
     border-radius: 15px;
-box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-    img{
+    box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+    img {
         max-width: 120px;
         box-shadow: none;
     }
-   
-}
- 
- .platform-box:hover{
-box-shadow:0px 6px 16px 0px hsla(0, 0%, 0%, 0.25);
-        transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
- }
 
+}
+
+.platform-box:hover {
+    box-shadow: 0px 6px 16px 0px hsla(0, 0%, 0%, 0.25);
+    transition: all 800ms cubic-bezier(0.19, 1, 0.22, 1);
+}
 </style>
