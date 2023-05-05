@@ -17,7 +17,7 @@
     :heightOv="'auto'"
     :topOv="'60px'"
     :leftOv="'380px'"
-    :titleContent="'<p>Seleziona il colore primario</p>'"
+    :titleContent="'<span>Seleziona il colore primario</span>'"
     :modalContent="'<div id=&quot;colorPickerPrimary&quot;></div>'"
   >
   </ModalOverlayVue>
@@ -69,8 +69,8 @@
 </template>
 
 <script setup>
-import ModalOverlayVue from "./ModalOverlay.vue";
-import { useCustomizationStore } from "../platform/IdeaShopping/store/customization";
+import ModalOverlayVue from "../../../components/ModalOverlay.vue";
+import { useCustomizationStore } from "../store/customization";
 
 const store = useCustomizationStore();
 

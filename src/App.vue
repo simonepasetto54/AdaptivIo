@@ -1,10 +1,13 @@
 <template>
 <!-- inserire il routing per l'app in modo da tornare indietro dopo la selezione -->
   <ChoosePlatform v-if="store.platform === ''"></ChoosePlatform> 
-  <div id="platform-wrapper" v-else>
-    <div class="site-wrapper" id="to_screen">
-      <div v-if="store.platform === 'ideaShopping'">
-        <IdeaShopping></IdeaShopping>
+  <div id="platform-wrapper" v-else >
+    <div class="site-wrapper" id="to_screen" >
+      <div v-if="store.platform === 'ideaShopping'" >
+        <IdeaShopping :fFam="'poppinFont'"></IdeaShopping>
+      </div>
+      <div v-else-if="store.platform === 'jobandjoy'" >
+        <JobAndJoy :fFam="'montserratFont'"></JobAndJoy>
       </div>
     </div>
     <CustomOptions></CustomOptions>
@@ -20,6 +23,7 @@ import CustomOptions from "./common/components/CustomOptions.vue";
 import ScreenShot from "../src/views/ScreenShot.vue";
 import { closeOverlay } from "../src/common/logic/Overlay";
 import IdeaShopping from "./common/platform/IdeaShopping/component/IdeaShopping.vue";
+import JobAndJoy from "./common/platform/JobAndJoy/component/JobAndJoy.vue";
 import ChoosePlatform from "./common/components/ChoosePlatform.vue";
 
 import { usePlatformStore } from "./stores/platform";

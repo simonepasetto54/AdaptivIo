@@ -11,7 +11,7 @@ export const saveImage = (idElement) => {
   }
   
   export const previewSite = (idElement) => {
-    let element = document.querySelector(`#${idElement}`)
+    let element = document.querySelector(`#to_screen`)
     html2canvas(element).then(canvas => {
       document.querySelector("#to_preview").appendChild(canvas)
   });

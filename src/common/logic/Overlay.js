@@ -6,19 +6,19 @@ export const openOverlay = () => {
     customNav.classList.add("z11", "editable");
     const overlayElement = document.getElementById("close-overlay")
     overlayElement.classList.remove("d-none")
-const modalsCustomElements = document.querySelectorAll('.overlay-modal');
+    const modalsCustomElements = document.querySelectorAll('.overlay-modal');
 
     modalsCustomElements.forEach((element) => {
       element.classList.remove('d-none');
     });
     const textCustom = document.querySelectorAll('.text-custom');
     textCustom.forEach((element) => {
-      element.classList.add("z11", "bg-white", "rounded-5")
+      element.classList.add("customModalOverlay")
       element.setAttribute('contenteditable', "");
     });
 
     const logoCustom = document.getElementById("logo-custom");
-    logoCustom.classList.add("z11", "bg-white", "rounded-2");
+    logoCustom.classList.add("customModalOverlay");
     
     cPicker('#colorPickerPrimary','primary')
     cPicker('#colorPickerSecondary','secondary')
@@ -42,11 +42,11 @@ const modalsCustomElements = document.querySelectorAll('.overlay-modal');
 
       const textCustom = document.querySelectorAll('.text-custom');
     textCustom.forEach((element) => {
-      element.classList.remove("z11", "bg-white", "rounded-5")
+      element.classList.remove("customModalOverlay")
       element.removeAttribute('contenteditable', "");
     });
 
     const logoCustom = document.getElementById("logo-custom");
-    logoCustom.classList.remove("z11", "bg-white", "rounded-2");
+    logoCustom.classList.remove("customModalOverlay");
 
     }

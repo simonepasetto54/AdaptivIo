@@ -4,13 +4,12 @@
     <div class="modal-dialog modal-fullscreen">
       <div class="modal-content">
         <div class="modal-header">
-          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" @click="resetPreview()"></button>
         </div>
         <div class="modal-body" id="to_preview">
-          
+            
         </div>
-        <div class="modal-footer">
+        <div class="modal-footer flex-center">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" @click="resetPreview()">Close</button>
           <button type="button" class="btn btn-primary" @click="saveImage('to_screen')">Download preview</button>
         </div>
