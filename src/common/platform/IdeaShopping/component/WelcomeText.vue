@@ -1,9 +1,9 @@
 <template>
     <img class="py-5 custom-img" src="src\assets\imgs\custom_hp_img.png" alt="">
     <div class="text-center" >
-        <h4>Benvenuto in Randstad Welfare Card</h4>
-        <p>Oltre il semplice Bonus</p>
-        <p class="text-custom" ref="textCustom" @keyup="validate">{{store.textCustom}}</p>
+        <h4 class="text-custom" ref="titleCustom" @keyup="validate($event.target, 'titleCustom')">Benvenuto in Randstad Welfare Card</h4>
+        <p class="text-custom" ref="subTitleCustom" @keyup="validate($event.target, 'subTitleCustom')">Oltre il semplice Bonus</p>
+        <p class="text-custom" ref="textCustom" @keyup="validate($event.target, 'textCustom')">{{store.textCustom}}</p>
     </div>
 </template>
 
@@ -13,11 +13,12 @@ import { ref, watch } from 'vue'
 import { useCustomizationStore } from "../store/customization";
 
 const store = useCustomizationStore();
+    const textCustom = ref(null)
+    const subTitleCustom = ref(null)
+    const titleCustom = ref(null)  
 
-  const textCustom = ref(null)
-
-  const validate = (event) => {
-    store.setTextCustom(textCustom.value.innerText.trim())
+  const validate = (element,type) => {
+    store.setTextCustom(element.innerText.trim(), type)
   }
 
 </script>

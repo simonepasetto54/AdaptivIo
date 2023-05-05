@@ -16,6 +16,9 @@ const modalsCustomElements = document.querySelectorAll('.overlay-modal');
       element.classList.add("z11", "bg-white", "rounded-5")
       element.setAttribute('contenteditable', "");
     });
+
+    const logoCustom = document.getElementById("logo-custom");
+    logoCustom.classList.add("z11", "bg-white", "rounded-2");
     
     cPicker('#colorPickerPrimary','primary')
     cPicker('#colorPickerSecondary','secondary')
@@ -42,5 +45,8 @@ const modalsCustomElements = document.querySelectorAll('.overlay-modal');
       element.classList.remove("z11", "bg-white", "rounded-5")
       element.removeAttribute('contenteditable', "");
     });
+
+    const logoCustom = document.getElementById("logo-custom");
+    logoCustom.classList.remove("z11", "bg-white", "rounded-2");
 
     }

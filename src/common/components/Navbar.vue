@@ -1,7 +1,7 @@
 <template>
   <nav class="navbar" id="customNav" :style="{ backgroundColor: store.primaryColor }">
     <div class="container d-flex justify-content-between">
-      <a class="navbar-brand" href="#">
+      <a class="navbar-brand">
         <p style="margin: 0; font-size: 14px; color: white">
           Powered By Idea Shopping ®
         </p>
@@ -16,26 +16,27 @@
     :widthOv="'150px'"
     :heightOv="'auto'"
     :topOv="'60px'"
-    :leftOv="'10px'"
-    :titleContent="'<p>Scegli il colore primario</p>'"
+    :leftOv="'380px'"
+    :titleContent="'<p>Seleziona il colore primario</p>'"
     :modalContent="'<div id=&quot;colorPickerPrimary&quot;></div>'"
   >
   </ModalOverlayVue>
-  <!-- <ModalOverlayVue
-    :widthOv="'150px'"
+  <ModalOverlayVue
+    :widthOv="'280px'"
     :heightOv="'auto'"
     :topOv="'160px'"
-    :leftOv="'100px'"
-    :titleContent="'<p>Scegli il colore secondario</p>'"
-    :modalContent="'<div id=&quot;colorPickerSecondary&quot;></div>'"
+    :leftOv="'10px'"
+    :titleContent="'<p>Clicca sul logo per modificarlo</p>'"
+    :modalContent="''"
   >
-  </ModalOverlayVue> -->
+  </ModalOverlayVue>
+  <input type="file" ref="logoFile" style="display: none" @change="handleFileChange"/>
   <div class="logo-navbar d-flex align-items-center" style="height: 100px">
     <div class="container">
       <div class="row">
         <div class="col-md-3 align-items-center">
-          <a class="navbar-brand" href="#">
-            <img src="../../assets/imgs/logo.png" class="w-75" alt="" />
+          <a class="navbar-brand">
+            <img :src="imgSrc || store.logo" @click="$refs.logoFile.click()" id="logo-custom" class="w-75" alt="" />
           </a>
         </div>
         <div class="col-md-9">
@@ -75,6 +76,13 @@ const store = useCustomizationStore();
 
 let modalContent = "<div id='colorPicker'></div>";
 let titleContent = "<p>Scegli il colore primario</p>";
+
+const handleFileChange = (event) => {
+  const file = event.target.files[0];
+  const src = URL.createObjectURL(file);
+  store.setImg(src)
+}
+
 </script>
 
 <style lang="css" scoped>
