@@ -10,11 +10,13 @@ const routes = [
   },
   {
      path: "/ideashopping", 
-     component: IdeaShopping 
+     component: IdeaShopping,
+     props: { fFam: 'poppinFont' }
   },
   {
     path: "/jobandjoy",
     component: JobAndJoy,
+    props: { fFam: 'montserratFont' }
   },
 ];
 const router = createRouter({

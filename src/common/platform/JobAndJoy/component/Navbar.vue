@@ -28,10 +28,10 @@
 </template>
 
 <script setup>
-import { useCustomizationStore } from "../store/customization";
+import { useCustomizationStoreJJ } from "../store/customization";
 import Menu from "../views/Menu.vue";
 import IntroBox from "../views/IntroBox.vue";
-const store = useCustomizationStore();
+const store = useCustomizationStoreJJ();
 
 const handleFileChange = (event) => {
   const file = event.target.files[0];

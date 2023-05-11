@@ -22,9 +22,12 @@
 import Navbar from "./Navbar.vue";
 import WelcomeText from "./WelcomeText.vue";
 import CustomOptions from "../../../components/CustomOptions.vue";
+import { usePlatformStore } from '../../../../stores/platform';
 
- const props = defineProps(["fFam"]);
+const store = usePlatformStore();
+store.setPlatform("ideashopping")
 
+const props = defineProps(["fFam"]);
 </script>
 
 <style>

@@ -9,7 +9,7 @@
 
 <script setup>
 
-import { ref, watch } from 'vue'
+import { ref } from 'vue'
 import { useCustomizationStore } from "../store/customization";
 
 const store = useCustomizationStore();

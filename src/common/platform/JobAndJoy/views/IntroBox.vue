@@ -1,5 +1,5 @@
 <template>
-  <div class="row container-home p-4 d-flex justify-content-between" :style="{ backgroundColor: primaryColor }">
+  <div class="row container-home p-4 d-flex justify-content-between customEl" :style="{ backgroundColor: primaryColor }">
     <div class="col-md-6 box-account">
       <div class="row">
         <div class="col-md-2">

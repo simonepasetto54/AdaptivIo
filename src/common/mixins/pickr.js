@@ -3,10 +3,13 @@ import '@simonwep/pickr/dist/themes/classic.min.css';   // 'classic' theme
 import '@simonwep/pickr/dist/themes/monolith.min.css';  // 'monolith' theme
 import '@simonwep/pickr/dist/themes/nano.min.css'; 
 import { useCustomizationStore } from '../platform/IdeaShopping/store/customization';
-
+import { useCustomizationStoreJJ } from '../platform/JobAndJoy/store/customization';
+import { usePlatformStore } from "../../stores/platform";
 
 export const cPicker = (element, colorType) => {
   let iSstore = useCustomizationStore();
+  let jJStore = useCustomizationStoreJJ();
+  let platformSelected = usePlatformStore()
 
  const pickr = Pickr.create({
     el: element,
@@ -31,9 +34,11 @@ export const cPicker = (element, colorType) => {
   pickr.on('changestop', () => {
     let selectedColor = pickr.getColor()
     let rgba = selectedColor.toHEXA().toString(3);
+    
+let storeToBeChanged =  platformSelected.platform == 'ideashopping' ? iSstore : jJStore
     colorType === 'primary'?
-    iSstore.setPrimaryColor(rgba) : 
-    iSstore.setSecondaryColor(rgba)
+    storeToBeChanged.setPrimaryColor(rgba) : 
+    storeToBeChanged.setSecondaryColor(rgba)
 })
 
 

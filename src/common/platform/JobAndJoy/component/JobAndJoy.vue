@@ -6,18 +6,24 @@
           <header>
             <Navbar></Navbar>
           </header>
+          <CampaignBox></CampaignBox>
         </div>
         <div class="col-md-1"></div>
       </div>
     </div>  
   <CustomOptions></CustomOptions>
 
+
 </template>
 
 <script setup>
 import Navbar from "./Navbar.vue";
 import CustomOptions from "../../../components/CustomOptions.vue";
+import CampaignBox from "./CampaignBox.vue";
+import { usePlatformStore } from '../../../../stores/platform';
 
+const store = usePlatformStore();
+store.setPlatform("jobandjoy")
   const props = defineProps(["fFam"]);
 </script>
 

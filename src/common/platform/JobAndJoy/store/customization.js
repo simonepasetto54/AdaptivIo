@@ -1,7 +1,7 @@
 import { ref } from 'vue';
 import { defineStore } from 'pinia';
 
-export const useCustomizationStore = defineStore("customization", () => {
+export const useCustomizationStoreJJ = defineStore("customizationJJ", () => {
   const primaryColor = ref('#0d6cf8');
   const secondaryColor = ref('#101941');
 
@@ -16,7 +16,7 @@ export const useCustomizationStore = defineStore("customization", () => {
   };
 
  
-  const setImg = (logoSrc) => {
+  const setImg = (logoSrc) => { 
     logo.value = logoSrc
   }
 

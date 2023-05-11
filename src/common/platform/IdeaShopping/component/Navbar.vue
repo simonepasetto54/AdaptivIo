@@ -1,5 +1,5 @@
 <template>
-  <nav class="navbar" id="customNav" :style="{ backgroundColor: store.primaryColor }">
+  <nav class="navbar customEl" :style="{ backgroundColor: store.primaryColor }">
     <div class="container d-flex justify-content-between">
       <a class="navbar-brand">
         <p style="margin: 0; font-size: 14px; color: white">
@@ -73,9 +73,6 @@ import ModalOverlayVue from "../../../components/ModalOverlay.vue";
 import { useCustomizationStore } from "../store/customization";
 
 const store = useCustomizationStore();
-
-let modalContent = "<div id='colorPicker'></div>";
-let titleContent = "<p>Scegli il colore primario</p>";
 
 const handleFileChange = (event) => {
   const file = event.target.files[0];
