@@ -15,6 +15,7 @@
     
 </div>
 <CustomOptions></CustomOptions>
+<SaveDraft></SaveDraft>
 
 </template>
 
@@ -23,6 +24,7 @@ import Navbar from "./Navbar.vue";
 import WelcomeText from "./WelcomeText.vue";
 import CustomOptions from "../../../components/CustomOptions.vue";
 import { usePlatformStore } from '../../../../stores/platform';
+import SaveDraft from "../../../components/SaveDraft.vue";
 
 const store = usePlatformStore();
 store.setPlatform("ideashopping")

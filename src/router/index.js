@@ -2,6 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import IdeaShopping from "../common/platform/IdeaShopping/component/IdeaShopping.vue"
 import JobAndJoy from "../common/platform/JobAndJoy/component/JobAndJoy.vue"
 import ChoosePlatform from "../common/components/ChoosePlatform.vue";
+import Login from "../common/components/Login.vue"
 
 const routes = [
   { 

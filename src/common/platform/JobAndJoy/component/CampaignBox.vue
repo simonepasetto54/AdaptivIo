@@ -49,6 +49,12 @@
                 </div>
 
             </div>
+            <div class="link-footer text-white">
+                <span class="credits white-font" style="margin-left: 0px;"> Service provided by 
+                    <span href="https://amilon.eu/">Amilon SRL</span><br>
+                    <a id="linkPrivacy" href="javascript:void(0)">Informativa privacy</a> | <a id="linkCookie" href="javascript:void(0)" >Privacy e cookie policy</a> | <a id="linkConditions" href="javascript:void(0)">Condizioni uso sito</a> | <a href="javascript:void(0)">Cookie Settings</a></span>
+                    <img src="../../../../assets/imgs/fc.png" alt="">
+            </div>
         </div>
 
     </div>
@@ -191,6 +197,22 @@ const store = useCustomizationStoreJJ();
                 }
             }
 
+            
+
+        }
+        .link-footer{
+            font-size: 11px !important;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+            a{
+                color:white
+
+            }
+            .call-center{
+                max-width: 50px;
+            }
         }
     }
 }
