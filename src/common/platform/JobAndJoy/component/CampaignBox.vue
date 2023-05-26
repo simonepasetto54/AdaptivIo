@@ -5,8 +5,10 @@
     :topOv="'220px'"
     :leftOv="'920px'"
     :titleContent="'<span>Seleziona il colore primario</span>'"
-    :modalContent="'<div id=&quot;colorPickerPrimary&quot;></div>'"
   >
+  <template #modalContent>
+    <div id="colorPickerPrimary"></div>
+  </template>
   </ModalOverlayVue>
   
   <ModalOverlayVue
@@ -53,7 +55,7 @@
                 <span class="credits white-font" style="margin-left: 0px;"> Service provided by 
                     <span href="https://amilon.eu/">Amilon SRL</span><br>
                     <a id="linkPrivacy" href="javascript:void(0)">Informativa privacy</a> | <a id="linkCookie" href="javascript:void(0)" >Privacy e cookie policy</a> | <a id="linkConditions" href="javascript:void(0)">Condizioni uso sito</a> | <a href="javascript:void(0)">Cookie Settings</a></span>
-                    <img src="../../../../assets/imgs/fc.png" alt="">
+                    <img class="call-center" src="../../../../assets/imgs/fc.png" alt="">
             </div>
         </div>
 
@@ -64,8 +66,10 @@
     :topOv="'500px'"
     :leftOv="'920px'"
     :titleContent="'<span>Seleziona il colore secondario</span>'"
-    :modalContent="'<div id=&quot;colorPickerSecondary&quot;></div>'"
   >
+  <template #modalContent>
+    <div id="colorPickerSecondary"></div>
+  </template>
   </ModalOverlayVue>
 </template>
 
@@ -211,7 +215,7 @@ const store = useCustomizationStoreJJ();
 
             }
             .call-center{
-                max-width: 50px;
+                max-width: 50px !important;
             }
         }
     }

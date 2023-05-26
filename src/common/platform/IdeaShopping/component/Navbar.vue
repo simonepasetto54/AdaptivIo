@@ -18,8 +18,10 @@
     :topOv="'60px'"
     :leftOv="'380px'"
     :titleContent="'<span>Seleziona il colore primario</span>'"
-    :modalContent="'<div id=&quot;colorPickerPrimary&quot;></div>'"
   >
+  <template #modalContent>
+    <div id="colorPickerPrimary"></div>
+  </template>
   </ModalOverlayVue>
   <ModalOverlayVue
     :widthOv="'280px'"

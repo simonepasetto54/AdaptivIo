@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;400;500;550;600;700;800&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 :root {
   --vt-c-white: #ffffff;
   --vt-c-white-soft: #f8f8f8;
@@ -111,3 +111,4 @@ body {
   background-color: white;
   border-radius: 15px
 }
+

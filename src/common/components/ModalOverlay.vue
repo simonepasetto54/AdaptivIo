@@ -1,8 +1,12 @@
 <template>
   <div class="overlay-modal d-none z11" :style="{ width: widthOv, height: heightOv, top: topOv, left: leftOv }">
+    
     <div v-html="titleContent"></div>
-    <div v-html="modalContent"></div>
+    <!-- <div v-html="modalContent"></div> -->
+    <slot name="modalContent"></slot>
+    
   </div>
+  
 </template>
 
 <script setup>

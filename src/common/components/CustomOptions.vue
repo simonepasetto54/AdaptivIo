@@ -26,7 +26,6 @@
 import { ref } from "vue";
 import { previewSite } from "../logic/Screenshot";
 import {openOverlay} from '../logic/Overlay';
-
 let updateVisibility = ref("hidden");
 const openOptions = (option) => {
   updateVisibility.value = option;

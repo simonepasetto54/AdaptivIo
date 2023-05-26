@@ -1,4 +1,5 @@
 import {cPicker} from "../mixins/pickr";
+
 export const openOverlay = () => {
     const elementOverlayed = document.getElementById("overlay");
     elementOverlayed.classList.add("overlay");

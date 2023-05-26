@@ -2,19 +2,20 @@ import Pickr from '@simonwep/pickr/dist/pickr.es5.min';
 import '@simonwep/pickr/dist/themes/classic.min.css';   // 'classic' theme
 import '@simonwep/pickr/dist/themes/monolith.min.css';  // 'monolith' theme
 import '@simonwep/pickr/dist/themes/nano.min.css'; 
-import { useCustomizationStore } from '../platform/IdeaShopping/store/customization';
-import { useCustomizationStoreJJ } from '../platform/JobAndJoy/store/customization';
 import { usePlatformStore } from "../../stores/platform";
 
-export const cPicker = (element, colorType) => {
-  let iSstore = useCustomizationStore();
-  let jJStore = useCustomizationStoreJJ();
+export const cPicker = (element, colorType ) => {
   let platformSelected = usePlatformStore()
 
+
+  let selectColor = () => {
+    let primaryOrSecondary = colorType + 'Color';
+    return platformSelected.entryStores[platformSelected.platform][primaryOrSecondary]
+  }
  const pickr = Pickr.create({
     el: element,
     theme: "nano",
-    default: "#563d7c",
+    default: selectColor(),
     defaultRepresentation: 'HEX',
     components: {
       preview: true,
@@ -34,11 +35,12 @@ export const cPicker = (element, colorType) => {
   pickr.on('changestop', () => {
     let selectedColor = pickr.getColor()
     let rgba = selectedColor.toHEXA().toString(3);
-    
-let storeToBeChanged =  platformSelected.platform == 'ideashopping' ? iSstore : jJStore
-    colorType === 'primary'?
-    storeToBeChanged.setPrimaryColor(rgba) : 
-    storeToBeChanged.setSecondaryColor(rgba)
+
+    let colorUppercase = colorType.charAt(0).toUpperCase() + colorType.slice(1);
+    let colorToBeUpdated = `set${colorUppercase}Color`
+    platformSelected.entryStores[platformSelected.platform][colorToBeUpdated](rgba)
+
+
 })
 
 
